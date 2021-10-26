@@ -5,7 +5,7 @@ const params = {
      borderSize: 5,       // Tamanho da borda
      fontSize: 15,        // Tamanho da fonte
      headerRatio: 0.15,   // Proporção do painel superior na tela
-     difficultLevel: 0.1, // Dificuldade do jogo
+     difficultLevel: 0.1, // Dificuldade do jogo, percentual de minas
      getColumnsAmount(){  // Saber quantos blocos consigo colocar no X e no Y coluna
           const width = Dimensions.get("window").width
           return Math.floor(width / this.blockSize) // Math.floor arredonda pra baixo
