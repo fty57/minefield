@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
 import params from '../params'
-import Mine from "./Mine"
-import Flag from "./Flag"
+import Mine from './Mine'
+import Flag from './Flag'
 
 export default props => {
      // Utilização do destructuring

@@ -5,7 +5,7 @@ export default props => {
      return (
           // Tem-se um array, e em caso de existir a propriedade bigger, ele adiciona o styles.Bigger
           <View style={styles.container}>
-               <View style={[styles.flagpole, props.bigger? slyles.flagpoleBigger : null]}/>
+               <View astyle={[styles.flagpole, props.bigger? slyles.flagpoleBigger : null]}/>
                <View style={[styles.flag, props.bigger? slyles.flagBigger : null]}/>
                <View style={[styles.base1, props.bigger? slyles.base1Bigger : null]}/>
                <View style={[styles.base2, props.bigger? slyles.base2Bigger : null]}/>

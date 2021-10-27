@@ -15,8 +15,8 @@ const createBoard = (rows, columns) => {
 }
 
 const spreadMines = (board, minesAmount) => {
-     const rows = board.lenght
-     const columns = board[0].lenght
+     const rows = board.length
+     const columns = board[0].length
      let minesPlanted = 0
 
      while (minesPlanted < minesAmount) {
@@ -54,7 +54,7 @@ const getNeighbors = (board, row, column) => {
           columns.forEach(c => {
                const different = r !== row || c !== column
                const validRow = r >= 0 && r < board.length
-               const validColumn = c >= 0 && c < board[0].lenght
+               const validColumn = c >= 0 && c < board[0].length
                if(different && validRow && validColumn) {
                     neighbors.push(board[r][c]) 
                }
@@ -65,7 +65,7 @@ const getNeighbors = (board, row, column) => {
 
 const safeNeighborhood = (board, row, column) => {
      // Vai dizer se a vizinhaça é segura ou não
-     const safes = (result, neighbor) => result && !neighbors.mined
+     const safes = (result, neighbor) => result && !neighbor.mined
      return getNeighbors(board, row, column).reduce(safes, true)    
 }
 
@@ -86,7 +86,7 @@ const openField = (board, row, column) => {
           // Se a vizinhança não for segura, confira quantas minas tem ao redor
           else{
                const neighbors = getNeighbors(board, row, column)
-               field.nearMines = neighbors.filter(n => n.mined).lenght
+               field.nearMines = neighbors.filter(n => n.mined).length
           }
      }
 }
@@ -96,14 +96,14 @@ const fields = board => [].concat(...board)
 
 // Ele vai retornar apenas o campo se estiver explodido
 const hadExplosion = board => field(board) 
-     .filter(field => field.exploded).lenght > 0
+     .filter(field => field.exploded).length > 0
 
 // Campos pendentes
 const pendding = field => (field.mined && !field.flagged)
      || (!field.mined && !field.opened)
 
 // Condição de vitória
-const wonGame = board => fields(board).filter(pendding).lenght === 0
+const wonGame = board => fields(board).filter(pendding).length === 0
 
 // Mostrar as minas
 const showMines = board => fields(board).filter(field => field.mines)
@@ -114,7 +114,8 @@ const invertFlag = (board, row, column) => {
      field.flagged = !field.flagged
 }
 
-const flagsUsed = board => fields(board).filter(field => field.flagged).lenght
+const flagsUsed = board => fields(board)
+     .filter(field => field.flagged).length
 
 export {
      createMinedBoard,
@@ -124,5 +125,5 @@ export {
      wonGame,
      showMines,
      invertFlag,
-     flagUsed
+     flagsUsed
 }

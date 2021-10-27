@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Alert } from 'react-native';
-import params from "./src/params"
-import Field from "./src/components/Field"
-import MineField from "./src/components/MineField"
-import Header from './src/components/Header';
-import LevelSelection from './src/screens/LevelSelection';
+import {StyleSheet, Text, View, Alert} from 'react-native';
+import params from './src/params'
+import MineField from './src/components/MineField'
+import Header from './src/components/Header'
+import LevelSelection from './src/screens/LevelSelection'
 import {
   createMinedBoard,
   cloneBoard,
@@ -14,7 +13,7 @@ import {
   showMines,
   invertFlag,
   flagsUsed
-} from "./src/functions"
+} from './src/functions'
 
 
 export default class App extends React.Component {
@@ -89,7 +88,7 @@ export default class App extends React.Component {
             onSelectField={this.onSelectField} />
         </View>
       </View>
-    )
+    );
   }
 
 }
