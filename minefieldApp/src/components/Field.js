@@ -25,6 +25,7 @@ export default props => {
      }
 
      return (
+          // Uma view que tem uma função quando pressionada
           <TouchableWithoutFeedback onPress={props.onOpen} 
                onLongPress={props.onSelect}>
                <View style={styleField}>
