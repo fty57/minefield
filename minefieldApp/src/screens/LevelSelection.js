@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, ToucheableOpacity, Modal } from 'react-native'
 
 export default props => {
      return (
+          // Tela para escolher a dificuldade da fase
           <Modal onRequestClose={props.onCancel}
                visible={props.isVisible} animationType="slide"
                transparent={true}>
